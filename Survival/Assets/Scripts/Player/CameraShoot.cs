@@ -8,6 +8,10 @@ public class CameraShoot : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] private float rotationSpeed = 0.25f;
+    public float mouseSensitivity = 100f;
+
+    float xRotation = 0f;
+    float YRotation = 0f;
     private Player player;
     private Transform cameraPosition;
     public GameObject mira;
@@ -21,6 +25,7 @@ public class CameraShoot : MonoBehaviour
     }
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         mira.SetActive(false);
     }
 
@@ -34,14 +39,19 @@ public class CameraShoot : MonoBehaviour
 
 
             //Rotacion de la camara primera persona
-            float mouseX = Mouse.current.delta.x.ReadValue() * rotationSpeed;
-            float mouseY = Mouse.current.delta.y.ReadValue() * rotationSpeed;
-            transform.Rotate(Vector3.up, mouseX);
-            cameraPosition.Rotate(Vector3.left, mouseY);
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -100f, 10f);
+            YRotation += mouseX;
+            transform.localRotation = Quaternion.Euler(xRotation, YRotation, 0f);
         }
         else
         {
+            mira.SetActive(false);
             aimVirtualCamera.gameObject.SetActive(false);
         }
     }
 }
+
