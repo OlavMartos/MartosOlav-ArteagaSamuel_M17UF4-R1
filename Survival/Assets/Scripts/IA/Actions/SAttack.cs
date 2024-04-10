@@ -1,19 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attack", menuName = "Actions/Attack", order = 1)]
-public class SAttack : MonoBehaviour
+public class SAttack : SAction
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnFinishedState()
     {
-        
+        Debug.Log("Te perdono la vida");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnSetState(StateController sc)
     {
-        
+        base.OnSetState(sc);
+        Debug.Log("A que te doy");
+    }
+
+    public override void OnUpdate()
+    {
+        Debug.Log("Que te meto asin");
     }
 }
