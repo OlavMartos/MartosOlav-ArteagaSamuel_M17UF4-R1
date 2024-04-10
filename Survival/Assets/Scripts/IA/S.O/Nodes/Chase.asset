@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66461e1e0aa1cb84bbc576980dcd9261, type: 3}
   m_Name: Chase
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  parent: {fileID: 11400000, guid: bc92607b20853be4ca517e68026ccc6d, type: 2}
   children: []
-  condition: {fileID: 0}
-  abortConditions: []
-  action: {fileID: 0}
+  condition: {fileID: 11400000, guid: 05c8d18f42293814da3e4d3d96d03fc4, type: 2}
+  abortConditions:
+  - {fileID: 11400000, guid: 27f08c94b78d66b498890b4d6d037851, type: 2}
+  - {fileID: 11400000, guid: 5973f5d99491bbe45b1d044a805f62dc, type: 2}
+  - {fileID: 11400000, guid: 83d1e8be6b0e2164db354e405d1371d5, type: 2}
+  action: {fileID: 11400000, guid: c21b7299357acd542ba445fc17234bb7, type: 2}

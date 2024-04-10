@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66461e1e0aa1cb84bbc576980dcd9261, type: 3}
   m_Name: Run
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  parent: {fileID: 11400000, guid: 23ad32da02895e141b5044bcc023dfee, type: 2}
   children: []
-  condition: {fileID: 0}
-  abortConditions: []
-  action: {fileID: 0}
+  condition: {fileID: 11400000, guid: 83d1e8be6b0e2164db354e405d1371d5, type: 2}
+  abortConditions:
+  - {fileID: 11400000, guid: f461d1d34b35e6c4b93366af92ade620, type: 2}
+  action: {fileID: 11400000, guid: 76ace9a795bb67c4086763c8338ad153, type: 2}

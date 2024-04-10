@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66461e1e0aa1cb84bbc576980dcd9261, type: 3}
   m_Name: Die
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  parent: {fileID: 11400000, guid: 23ad32da02895e141b5044bcc023dfee, type: 2}
   children: []
-  condition: {fileID: 0}
+  condition: {fileID: 11400000, guid: f461d1d34b35e6c4b93366af92ade620, type: 2}
   abortConditions: []
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: 58a3d25f2b6f35f4c844bafe5fc31588, type: 2}
