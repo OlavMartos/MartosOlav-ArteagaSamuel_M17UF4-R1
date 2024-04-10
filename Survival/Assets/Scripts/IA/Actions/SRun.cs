@@ -19,6 +19,7 @@ public class SRun : SAction
         GameManager.Instance.UpdateText("No me atraparas con vida!");
         chase = sc.GetComponent<ChaseBehaviour>();
         enemyController = (EnemyController)sc;
+        // SoundManager.Instance.EnemyRun();
     }
 
     public override void OnUpdate()

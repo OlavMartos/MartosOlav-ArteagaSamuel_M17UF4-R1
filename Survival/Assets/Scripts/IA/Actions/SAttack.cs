@@ -12,6 +12,7 @@ public class SAttack : SAction
     {
         base.OnSetState(sc);
         GameManager.Instance.UpdateText("A que te doy");
+        // SoundManager.Instance.EnemyAttack();
     }
 
     public override void OnUpdate()

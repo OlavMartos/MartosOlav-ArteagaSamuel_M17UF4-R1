@@ -14,6 +14,7 @@ public class SDie : SAction
     {
         base.OnSetState(sc);
         GameManager.Instance.UpdateText("Me derrito! Me derrito!");
+        // SoundManager.Instance.EnemyDeath();
     }
 
     public override void OnUpdate()
