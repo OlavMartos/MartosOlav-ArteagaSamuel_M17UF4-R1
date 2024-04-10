@@ -25,7 +25,7 @@ public class CameraShoot : MonoBehaviour
     }
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         mira.SetActive(false);
     }
 
