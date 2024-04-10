@@ -16,7 +16,7 @@ public class SFollow : SAction
     public override void OnSetState(StateController sc)
     {
         base.OnSetState(sc);
-        Debug.Log("Voy por ti");
+        GameManager.Instance.UpdateText("Voy por ti");
         chase = sc.GetComponent<ChaseBehaviour>();
         enemyController = (EnemyController)sc;
     }

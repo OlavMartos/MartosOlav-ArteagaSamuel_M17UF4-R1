@@ -7,17 +7,17 @@ public class SDie : SAction
 {
     public override void OnFinishedState()
     {
-        Debug.Log("Me morí");
+        GameManager.Instance.UpdateText("Me morí");
     }
 
     public override void OnSetState(StateController sc)
     {
         base.OnSetState(sc);
-        Debug.Log("Me derrito! Me derrito!");
+        GameManager.Instance.UpdateText("Me derrito! Me derrito!");
     }
 
     public override void OnUpdate()
     {
-        Debug.Log("Toma todo mi dinero");
+        GameManager.Instance.UpdateText("Toma todo mi dinero");
     }
 }

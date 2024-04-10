@@ -16,7 +16,7 @@ public class SRun : SAction
     public override void OnSetState(StateController sc)
     {
         base.OnSetState(sc);
-        Debug.Log("No me atraparas con vida!");
+        GameManager.Instance.UpdateText("No me atraparas con vida!");
         chase = sc.GetComponent<ChaseBehaviour>();
         enemyController = (EnemyController)sc;
     }

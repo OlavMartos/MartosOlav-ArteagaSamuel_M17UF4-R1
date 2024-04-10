@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   children:
+  - {fileID: 11400000, guid: 0a8018a6ae95884438ef4ef88ca6336f, type: 2}
+  - {fileID: 11400000, guid: ba2328c5b593ce54d915138c4349d586, type: 2}
   - {fileID: 11400000, guid: 4f892c9a760bff34388922e000ac2af0, type: 2}
   - {fileID: 11400000, guid: 2c09b5eeb0d61b94fa2ef4f10b99b8da, type: 2}
-  - {fileID: 11400000, guid: 0a8018a6ae95884438ef4ef88ca6336f, type: 2}
   - {fileID: 11400000, guid: ae0f4891af33eea47b94fd661be10190, type: 2}
-  - {fileID: 11400000, guid: ba2328c5b593ce54d915138c4349d586, type: 2}
   condition: {fileID: 11400000, guid: cf25ba525f25c4b4f9e760b353b72c03, type: 2}
   abortConditions: []
   action: {fileID: 0}

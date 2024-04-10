@@ -10,7 +10,7 @@ public class EnemyController : StateController
     {
         StateTransition();
         if (currentState.action != null) currentState.action.OnUpdate();
-        if(Input.GetKey("J") && Time.time >= nextHurt)
+        if(Input.GetKey(KeyCode.J) && Time.time >= nextHurt)
         {
             OnHurt(1);
             nextHurt = Time.time + 0.3f;
@@ -24,11 +24,11 @@ public class EnemyController : StateController
 
     private void OnTriggerEnter(Collider other)
     {
-        target = other.gameObject;
+        if(other.CompareTag("Player")) target = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        target = null;
+        if(other.CompareTag("Player")) target = null;
     }
 }

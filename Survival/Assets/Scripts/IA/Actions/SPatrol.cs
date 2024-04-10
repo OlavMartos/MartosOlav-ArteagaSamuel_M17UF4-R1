@@ -7,17 +7,17 @@ public class SPatrol : SAction
 {
     public override void OnFinishedState()
     {
-        Debug.Log("Donde esta esta este tio?");
+        GameManager.Instance.UpdateText("Donde esta esta este tio?");
     }
 
     public override void OnSetState(StateController sc)
     {
         base.OnSetState(sc);
-        Debug.Log("A patrullar");
+        GameManager.Instance.UpdateText("A patrullar");
     }
 
     public override void OnUpdate()
     {
-        Debug.Log("Apatrullando la ciuda");
+        GameManager.Instance.UpdateText("Apatrullando la ciuda");
     }
 }

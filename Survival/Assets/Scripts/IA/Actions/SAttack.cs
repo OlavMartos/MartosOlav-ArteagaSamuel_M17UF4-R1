@@ -5,17 +5,17 @@ public class SAttack : SAction
 {
     public override void OnFinishedState()
     {
-        Debug.Log("Te perdono la vida");
+        GameManager.Instance.UpdateText("Te perdono la vida");
     }
 
     public override void OnSetState(StateController sc)
     {
         base.OnSetState(sc);
-        Debug.Log("A que te doy");
+        GameManager.Instance.UpdateText("A que te doy");
     }
 
     public override void OnUpdate()
     {
-        Debug.Log("Que te meto asin");
+        GameManager.Instance.UpdateText("Que te meto asin");
     }
 }
