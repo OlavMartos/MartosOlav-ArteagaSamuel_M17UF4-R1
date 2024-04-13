@@ -18,6 +18,17 @@ public class SPatrol : SAction
 
     public override void OnUpdate()
     {
-        GameManager.Instance.UpdateText("Apatrullando la ciuda");
+        GameManager.Instance.UpdateText("patrullando la ciuda");
+        Animator animator = sc.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("idle", false);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Walk", true);
+        }
+        else
+        {
+            Debug.LogError("Animator no encontrado en el StateController.");
+        }
     }
 }

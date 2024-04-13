@@ -19,6 +19,17 @@ public class SRun : SAction
         GameManager.Instance.UpdateText("No me atraparas con vida!");
         chase = sc.GetComponent<ChaseBehaviour>();
         enemyController = (EnemyController)sc;
+        Animator animator = sc.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("idle", false);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            Debug.LogError("Animator no encontrado en el StateController.");
+        }
         // SoundManager.Instance.EnemyRun();
     }
 

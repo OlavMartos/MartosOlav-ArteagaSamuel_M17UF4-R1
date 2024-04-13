@@ -17,6 +17,19 @@ public class SAttack : SAction
 
     public override void OnUpdate()
     {
-        GameManager.Instance.UpdateText("Que te meto asin");
+        GameManager.Instance.UpdateText("Que te meto asi");
+        Animator animator = sc.GetComponent<Animator>();
+        if (animator != null)
+        {
+            Debug.Log("Se ha activado el ataque");
+            animator.SetBool("Run", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("idle", false);
+            animator.SetBool("Attack", true);
+        }
+        else
+        {
+            Debug.LogError("Animator no encontrado en el StateController.");
+        }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class SAction : ScriptableObject
 {
     protected StateController sc;
+    
 
     public abstract void OnFinishedState();
 
