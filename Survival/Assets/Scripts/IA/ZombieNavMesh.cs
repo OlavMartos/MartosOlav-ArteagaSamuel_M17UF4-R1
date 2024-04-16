@@ -9,7 +9,26 @@ public class ZombieNavMesh : MonoBehaviour
     private NavMeshAgent navMeshAgentagent;
     private void Awake()
     {
-        navMeshAgentagent= GetComponent<NavMeshAgent>();
+        navMeshAgentagent= transform.GetComponent<NavMeshAgent>();
+
+        
+    }
+
+    private void Start()
+    {
+        NavMeshAgent[] enemies = GameObject.FindObjectsOfType<NavMeshAgent>();
+        StartCoroutine(EnableAgents(enemies));
+    }
+
+    IEnumerator EnableAgents(NavMeshAgent[] enemies)
+    {
+        foreach (NavMeshAgent agent in enemies) agent.enabled = false;
+        yield return new WaitForSecondsRealtime(2.0f);
+        foreach (NavMeshAgent agent in enemies)
+        {
+            agent.enabled = true;
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
     }
 
     // Update is called once per frame
@@ -17,11 +36,13 @@ public class ZombieNavMesh : MonoBehaviour
     {
         if (GetComponent<EnemyController>().target == null)
         {
-            navMeshAgentagent.destination=movePositionTransform.position;
+            navMeshAgentagent.SetDestination(movePositionTransform.position);
         }
         else
         {
             movePositionTransform = null;
         }
+
+        if(GetComponent<EnemyController>().HP <= 0) { navMeshAgentagent.enabled = false; }
     }
 }
