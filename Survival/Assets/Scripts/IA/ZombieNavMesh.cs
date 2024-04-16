@@ -1,17 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ZombieNavMesh : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
+    private Transform moveTransformOrigin;
     private NavMeshAgent navMeshAgentagent;
+
     private void Awake()
     {
         navMeshAgentagent= transform.GetComponent<NavMeshAgent>();
-
-        
+        moveTransformOrigin = movePositionTransform;
     }
 
     private void Start()
@@ -31,18 +31,16 @@ public class ZombieNavMesh : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (GetComponent<EnemyController>().target == null)
-        {
-            navMeshAgentagent.SetDestination(movePositionTransform.position);
-        }
-        else
-        {
-            movePositionTransform = null;
-        }
+        if (GetComponent<EnemyController>().target == null) navMeshAgentagent.SetDestination(movePositionTransform.position);
+        else movePositionTransform = null;
 
         if(GetComponent<EnemyController>().HP <= 0) { navMeshAgentagent.enabled = false; }
+    }
+
+    public void ReturnPatrol()
+    {
+        movePositionTransform = moveTransformOrigin;
     }
 }

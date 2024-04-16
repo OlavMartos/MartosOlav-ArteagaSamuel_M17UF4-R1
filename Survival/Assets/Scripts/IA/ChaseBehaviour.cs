@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ChaseBehaviour : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ChaseBehaviour : MonoBehaviour
 
     public void Chase(Transform target, Transform self)
     {
+        GetComponent<NavMeshAgent>().enabled = false;
         rb.velocity = (target.position - self.position).normalized * speed;
     }
 
@@ -24,6 +26,8 @@ public class ChaseBehaviour : MonoBehaviour
 
     public void StopChasing()
     {
+        GetComponent<NavMeshAgent>().enabled = true;
+        GetComponent<ZombieNavMesh>().ReturnPatrol();
         rb.velocity = Vector3.zero;
     }
 }
