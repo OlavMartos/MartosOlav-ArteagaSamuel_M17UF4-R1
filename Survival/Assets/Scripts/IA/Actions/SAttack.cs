@@ -25,6 +25,7 @@ public class SAttack : SAction
             animator.SetBool("Run", false);
             animator.SetBool("Walk", false);
             animator.SetBool("idle", false);
+            animator.SetBool("Die", false);
             animator.SetBool("Attack", true);
         }
         else

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.041146584, g: 0.054647904, b: 0.07969272, a: 1}
+  m_IndirectSpecularColor: {r: 0.04115164, g: 0.0546541, b: 0.07969938, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -723,8 +723,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10.344515
-  m_Center: {x: 1.7201366, y: 7.624378, z: 0}
+  m_Radius: 14.432893
+  m_Center: {x: 5.8085146, y: 7.6243773, z: 0}
 --- !u!114 &113799313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,9 +774,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.7521095
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.37605476, z: 0}
 --- !u!54 &113799317
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac29aa149e5a63b4ca6c14a3dda7721e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePositionTransform: {fileID: 342106666}
+  movePositionTransform: {fileID: 1932675281}
 --- !u!195 &113799319
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3954,7 +3954,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ae433c79081a0de4ba224515ae376539,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1139297
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae433c79081a0de4ba224515ae376539,
         type: 3}
@@ -4088,7 +4088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896456931}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.041071523, y: -0.5701194, z: 0.028554386, w: 0.82003766}
+  m_LocalRotation: {x: 0.041071523, y: -0.5701194, z: 0.028554382, w: 0.82003766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8201,7 +8201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134633470}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.55523705, y: -0.09065538, z: 0.060813636, w: 0.82449687}
+  m_LocalRotation: {x: 0.55523705, y: -0.09065537, z: 0.060813628, w: 0.824497}
   m_LocalPosition: {x: -0.5013881, y: 2.196924, z: 0.39696893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -24,6 +24,7 @@ public class SRun : SAction
         {
             animator.SetBool("idle", false);
             animator.SetBool("Attack", false);
+            animator.SetBool("Die", false);
             animator.SetBool("Run", true);
         }
         else

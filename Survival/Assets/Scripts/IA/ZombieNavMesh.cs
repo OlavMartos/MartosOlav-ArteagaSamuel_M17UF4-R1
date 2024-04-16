@@ -15,13 +15,13 @@ public class ZombieNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<EnemyController>().target == null)
-        {
+        //if (GetComponent<EnemyController>().target == null)
+        //{
             navMeshAgentagent.destination=movePositionTransform.position;
-        }
-        else
-        {
-            movePositionTransform = null;
-        }
+        //}
+        //else
+        //{
+        //    movePositionTransform = null;
+        //}
     }
 }
