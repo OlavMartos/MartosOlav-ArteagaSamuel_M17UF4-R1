@@ -205,14 +205,16 @@ public class Player : MonoBehaviour
         {
             bullet.transform.position = positionArma.position;
             bullet.transform.rotation = rotationArma.rotation;
+            bullet.SetActive(true);
+
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             if (bulletRigidbody != null)
             {
-                bulletRigidbody.AddForce(transform.forward * velocidadBala);
+                bulletRigidbody.AddForce(transform.forward * velocidadBala, ForceMode.Impulse);
             }
 
-            bullet.SetActive(true);
             StartCoroutine(DisableBullet(bullet));
+            return;
         }
     }
     private IEnumerator DisableBullet(GameObject bullet)
