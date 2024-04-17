@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class ZombieNavMesh : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
-    private Transform moveTransformOrigin;
+    [SerializeField] private Transform moveTransformOrigin;
     private NavMeshAgent navMeshAgentagent;
 
     private void Awake()
