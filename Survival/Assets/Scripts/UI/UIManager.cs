@@ -11,6 +11,12 @@ public class UIManager : MonoBehaviour
     [Header("GameOver")]
     [SerializeField] public GameObject gameoverMenu;
     public PlayerController playerController;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +31,9 @@ public class UIManager : MonoBehaviour
     public void Reiniciar()
     {
         Debug.Log(playerController);
-        playerController.SavePlayerPosition();
-        playerController.LoadPlayerPosition();
+        //playerController.SavePlayerPosition();
+        //playerController.LoadPlayerPosition();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         gameoverMenu.SetActive(false);
     }
     public void ExitGame()
