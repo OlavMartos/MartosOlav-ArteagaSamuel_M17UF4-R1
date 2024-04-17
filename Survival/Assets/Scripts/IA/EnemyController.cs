@@ -5,7 +5,12 @@ public class EnemyController : StateController
     public float AttackDistance;
     public float HP;
     private float nextHurt = 0;
+    private Animator anim;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Update()
     {
         StateTransition();
