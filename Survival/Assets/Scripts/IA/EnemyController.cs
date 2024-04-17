@@ -10,7 +10,7 @@ public class EnemyController : StateController
     {
         StateTransition();
         if (currentState.action != null) currentState.action.OnUpdate();
-        if(Input.GetKey(KeyCode.J) && Time.time >= nextHurt)
+        if((currentState.name == "Chase" || currentState.name == "Run") && Input.GetKey(KeyCode.J) && Time.time >= nextHurt)
         {
             OnHurt(1);
             nextHurt = Time.time + 0.3f;
