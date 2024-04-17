@@ -24,6 +24,7 @@ public class SPatrol : SAction
         {
             animator.SetBool("idle", false);
             animator.SetBool("Attack", false);
+            animator.SetBool("Die", false);
             animator.SetBool("Walk", true);
         }
         else

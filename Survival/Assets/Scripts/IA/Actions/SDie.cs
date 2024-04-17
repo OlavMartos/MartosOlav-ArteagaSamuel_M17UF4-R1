@@ -8,6 +8,17 @@ public class SDie : SAction
     public override void OnFinishedState()
     {
         GameManager.Instance.UpdateText("Me morí");
+        //Animator animator = sc.GetComponent<Animator>();
+        //if (animator != null)
+        //{
+           
+        //    animator.SetBool("Run", false);
+        //    animator.SetBool("Walk", false);
+        //    animator.SetBool("idle", false);
+        //    animator.SetBool("Attack", false);
+        //    animator.SetBool("Die", true);
+        //}
+
     }
 
     public override void OnSetState(StateController sc)
@@ -20,5 +31,15 @@ public class SDie : SAction
     public override void OnUpdate()
     {
         GameManager.Instance.UpdateText("Toma todo mi dinero");
+        Animator animator = sc.GetComponent<Animator>();
+        if (animator != null)
+        {
+
+            animator.SetBool("Run", false);
+            animator.SetBool("Walk", false);
+            animator.SetBool("idle", false);
+            animator.SetBool("Attack", false);
+            animator.SetBool("Die", true);
+        }
     }
 }
