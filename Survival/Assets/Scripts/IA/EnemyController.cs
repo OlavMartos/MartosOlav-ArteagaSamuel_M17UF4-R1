@@ -19,7 +19,10 @@ public class EnemyController : StateController
 
     public void OnHurt(float damage)
     {
-        HP -= damage;
+        if (HP - damage >= 0)
+        {
+            HP -= damage;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
