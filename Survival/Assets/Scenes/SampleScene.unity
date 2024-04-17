@@ -818,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTransform: {fileID: 1274925369}
   secondTransform: {fileID: 1709731478}
+  currentState: {fileID: 0}
 --- !u!195 &113799319
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2296,6 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstTransform: {fileID: 1992238885}
   secondTransform: {fileID: 1535161039}
+  currentState: {fileID: 0}
 --- !u!195 &411629564
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6373,7 +6375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538883964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019903254, y: -0.5727729, z: 0.013913448, w: 0.8193543}
+  m_LocalRotation: {x: 0.019903252, y: -0.5727729, z: 0.013913447, w: 0.8193543}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8750,7 +8752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134633470}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.55523705, y: -0.090655394, z: 0.060813643, w: 0.82449687}
+  m_LocalRotation: {x: 0.55523705, y: -0.09065537, z: 0.060813628, w: 0.824497}
   m_LocalPosition: {x: -0.5013881, y: 2.196924, z: 0.39696893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

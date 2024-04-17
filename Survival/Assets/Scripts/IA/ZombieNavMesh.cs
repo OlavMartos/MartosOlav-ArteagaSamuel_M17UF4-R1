@@ -6,6 +6,7 @@ public class ZombieNavMesh : MonoBehaviour
 {
     [SerializeField] private Transform firstTransform;
     [SerializeField] private Transform secondTransform;
+    [SerializeField] private NodeTree currentState;
     private Transform originTransform;
     private NavMeshAgent navMeshAgentagent;
 
@@ -34,8 +35,11 @@ public class ZombieNavMesh : MonoBehaviour
 
     void Update()
     {
+        currentState = GetComponent<EnemyController>().currentState;
         if (GetComponent<EnemyController>().target == null) navMeshAgentagent.SetDestination(firstTransform.position);
         else firstTransform = null;
+
+        if (currentState.name == "Run") firstTransform = originTransform;
 
         if(GetComponent<EnemyController>().HP <= 0) { navMeshAgentagent.enabled = false; }
     }

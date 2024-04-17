@@ -15,6 +15,8 @@ public class EnemyController : StateController
             OnHurt(1);
             nextHurt = Time.time + 0.3f;
         }
+
+        if (currentState.name == "Run") target = null;
     }
 
     public void OnHurt(float damage)
