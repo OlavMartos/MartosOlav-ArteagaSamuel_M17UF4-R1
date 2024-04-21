@@ -2,7 +2,7 @@
 ## Descripció del joc
 Es tracta d'un joc rpg survival en 3d. Existeixen tres enemics patrullant una determinada zona. El jugador a d'impedir que els zombis acabin amb la vida del personatge principal que controla.
 
-El jugador també pot matar a aquests enemics utilitzant la tecla [J]
+En el següent apartat es pot veure la tecla necesaria per poder matar a un d'aquests enemics
 
 ## Controls del joc
 | Tecla | Acció |
