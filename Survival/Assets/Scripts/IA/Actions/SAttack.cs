@@ -27,6 +27,7 @@ public class SAttack : SAction
             animator.SetBool("idle", false);
             animator.SetBool("Die", false);
             animator.SetBool("Attack", true);
+            UIManager.instance.GameOver();
         }
         else
         {
