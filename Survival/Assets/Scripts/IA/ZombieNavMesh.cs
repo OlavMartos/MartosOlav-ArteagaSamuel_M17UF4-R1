@@ -4,14 +4,16 @@ using UnityEngine.AI;
 
 public class ZombieNavMesh : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
-    [SerializeField] private Transform moveTransformOrigin;
+    [SerializeField] private Transform firstTransform;
+    [SerializeField] private Transform secondTransform;
+    [SerializeField] private NodeTree currentState;
+    private Transform originTransform;
     private NavMeshAgent navMeshAgentagent;
 
     private void Awake()
     {
         navMeshAgentagent= transform.GetComponent<NavMeshAgent>();
-        moveTransformOrigin = movePositionTransform;
+        originTransform = firstTransform;
     }
 
     private void Start()
@@ -33,14 +35,27 @@ public class ZombieNavMesh : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<EnemyController>().target == null) navMeshAgentagent.SetDestination(movePositionTransform.position);
-        else movePositionTransform = null;
+        currentState = GetComponent<EnemyController>().currentState;
+        if (GetComponent<EnemyController>().target == null) navMeshAgentagent.SetDestination(firstTransform.position);
+        else firstTransform = null;
+
+        if (currentState.name == "Run" || currentState.name == "Patrol") firstTransform = originTransform;
 
         if(GetComponent<EnemyController>().HP <= 0) { navMeshAgentagent.enabled = false; }
     }
 
     public void ReturnPatrol()
     {
-        movePositionTransform = moveTransformOrigin;
+        firstTransform = originTransform;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform == firstTransform)
+        {
+            firstTransform = secondTransform;
+            secondTransform = originTransform;
+            originTransform = firstTransform;
+        }
     }
 }

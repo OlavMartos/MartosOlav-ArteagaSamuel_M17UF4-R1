@@ -19,12 +19,14 @@ public class EnemyController : StateController
         StateTransition();
         if (currentState.action != null) currentState.action.OnUpdate();
 
-        
-        if (Input.GetKeyDown(KeyCode.J))
+        if((currentState.name == "Chase" || currentState.name == "Run") && Input.GetKey(KeyCode.J) && Time.time >= nextHurt)
+
         {
             OnHurt(10); 
             UpdateHealthBarInstant(); 
         }
+
+        if (currentState.name == "Run") target = null;
     }
 
     public void OnHurt(float damage)
