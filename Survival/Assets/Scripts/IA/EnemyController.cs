@@ -19,8 +19,7 @@ public class EnemyController : StateController
         StateTransition();
         if (currentState.action != null) currentState.action.OnUpdate();
 
-        if((currentState.name == "Chase" || currentState.name == "Run") && Input.GetKey(KeyCode.J) && Time.time >= nextHurt)
-
+        if((currentState.name == "Chase" || currentState.name == "Run") && Input.GetKey(KeyCode.J))
         {
             OnHurt(10); 
             UpdateHealthBarInstant(); 
@@ -37,7 +36,6 @@ public class EnemyController : StateController
 
     private void UpdateHealthBarInstant()
     {
-        
         healthBar.fillAmount = HP / maxHP;
     }
 
