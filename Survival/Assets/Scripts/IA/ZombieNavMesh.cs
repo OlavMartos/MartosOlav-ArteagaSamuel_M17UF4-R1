@@ -37,7 +37,11 @@ public class ZombieNavMesh : MonoBehaviour
     {
         currentState = GetComponent<EnemyController>().currentState;
         if (GetComponent<EnemyController>().target == null) navMeshAgentagent.SetDestination(originTransform.position);
-        else firstTransform = GetComponent<EnemyController>().target.transform;
+        else
+        {
+            firstTransform = GetComponent<EnemyController>().target.transform;
+            transform.LookAt(firstTransform.position);
+        }
 
         if (currentState.name == "Run" || currentState.name == "Patrol") firstTransform = originTransform;
 
